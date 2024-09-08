@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <math.h>  
 
-
 #define PI 3.14159
 
 
-double calculateDistance() {
+double calculate_distance() {
     double x1, y1, x2, y2, distance;
+    
     
     printf("Enter x1: ");
     scanf("%lf", &x1);
@@ -27,71 +27,55 @@ double calculateDistance() {
 }
 
 
-double calculatePerimeter() {
-    double radius, perimeter;
+double calculate_perimeter() {
+    double distance = calculate_distance();
+    double radius = distance / 2.0;
+    double perimeter = 2 * PI * radius;
     
-    
-    radius = calculateDistance() / 2;
-    
-    
-    perimeter = 2 * PI * radius;
-    
-    
-    printf("The perimeter of the circle is: %.2lf\n", perimeter);
+    // Output the perimeter in the expected format
+    printf("The perimeter of the city encompassed by your request is: %.2lf\n", perimeter);
     
     return perimeter;
 }
 
 
-double calculateArea() {
-    double radius, area;
+double calculate_area() {
+    double distance = calculate_distance();
+    double radius = distance / 2.0;
+    double area = PI * pow(radius, 2);
     
     
-    radius = calculateDistance() / 2;
-    
-    
-    area = PI * pow(radius, 2);
-    
-    
-    printf("The area of the circle is: %.2lf\n", area);
+    printf("The area of the city encompassed by your request is: %.2lf\n", area);
     
     return area;
 }
 
 
-double calculateHeight() {
-    double height;
+double calculate_width() {
+    double distance = calculate_distance();
     
     
-    height = calculateDistance();
+    printf("The width of the city encompassed by your request is: %.2lf\n", distance);
     
-    
-    printf("The height (diameter) of the circle is: %.2lf\n", height);
-    
-    return height;
+    return distance;
 }
 
 
-double calculateWidth() {
-    double width;
+double calculate_height() {
+    double distance = calculate_distance();
     
     
-    width = calculateDistance();
+    printf("The height of the city encompassed by your request is: %.2lf\n", distance);
     
-    
-    printf("The width (diameter) of the circle is: %.2lf\n", width);
-    
-    return width;
+    return distance;
 }
 
 
 int main(void) {
-    
-    calculateDistance();
-    calculatePerimeter();
-    calculateArea();
-    calculateWidth();
-    calculateHeight();
+    calculate_perimeter();
+    calculate_area();
+    calculate_width();
+    calculate_height();
     
     return 0;
 }
